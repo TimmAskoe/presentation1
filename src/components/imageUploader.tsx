@@ -1,5 +1,6 @@
 import { Upload, message } from "antd";
-import { InboxOutlined } from "@ant-design/icons";
+import { GiHamburger } from "react-icons/gi";
+
 const { Dragger } = Upload;
 
 const props = {
@@ -13,7 +14,7 @@ const props = {
     if (status === "done") {
       message.success(`${info.file.name} file uploaded successfully.`);
     } else if (status === "error") {
-      message.success(`${info.file.name} file uploaded successfully.`);
+      message.error(`${info.file.name} file did not upload.`);
     }
   },
   onDrop(e: any) {
@@ -26,10 +27,10 @@ export function ImageUploader() {
     <div>
       <Dragger {...props}>
         <p className="ant-upload-drag-icon">
-          <InboxOutlined />
+          <GiHamburger size={56} />
         </p>
         <p className="ant-upload-text">
-          Click or drag file to this area to upload
+          Click or drag a picture of your burger to this area to upload
         </p>
         <p className="ant-upload-hint">
           Support for a single or bulk upload. Strictly prohibit from uploading

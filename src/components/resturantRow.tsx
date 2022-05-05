@@ -1,5 +1,6 @@
 import { InfoCircleTwoTone } from "@ant-design/icons";
-import { Popover } from "antd";
+import { Button, Popover, Rate } from "antd";
+import { attachTypeApi } from "antd/lib/message";
 
 interface ResturantRowProps {
   name: string;
@@ -119,8 +120,22 @@ export function ResturantRow(props: ResturantRowProps) {
             marginLeft: "8px",
           }}
         >
-          <div>Taste:</div>
-          <div>{props.tasteRating}</div>
+          <div
+            style={{
+              alignSelf: "center",
+            }}
+          >
+            Taste:
+          </div>
+          <Popover content={props.tasteRating}>
+            <div>
+              <Rate
+                value={Math.round(parseFloat(props.tasteRating) * 2) / 2}
+                allowHalf
+                disabled
+              />
+            </div>
+          </Popover>
         </div>
         <div
           style={{
@@ -129,8 +144,22 @@ export function ResturantRow(props: ResturantRowProps) {
             marginLeft: "8px",
           }}
         >
-          Texture:
-          <div>{props.textureRating}</div>
+          <div
+            style={{
+              alignSelf: "center",
+            }}
+          >
+            Texture:
+          </div>
+          <Popover content={props.textureRating}>
+            <div>
+              <Rate
+                value={Math.round(parseFloat(props.textureRating) * 2) / 2}
+                allowHalf
+                disabled
+              />
+            </div>
+          </Popover>
         </div>
         <div
           style={{
@@ -139,8 +168,22 @@ export function ResturantRow(props: ResturantRowProps) {
             marginLeft: "8px",
           }}
         >
-          Visual:
-          <div>{props.visualRating}</div>
+          <div
+            style={{
+              alignSelf: "center",
+            }}
+          >
+            Visual:
+          </div>
+          <Popover content={props.visualRating}>
+            <div>
+              <Rate
+                value={Math.round(parseFloat(props.visualRating) * 2) / 2}
+                allowHalf
+                disabled
+              />
+            </div>
+          </Popover>
         </div>
       </div>
     );
@@ -156,18 +199,15 @@ export function ResturantRow(props: ResturantRowProps) {
     >
       <div>{props.name}</div>
       <div>{props.distance}</div>
-      <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-          }}
-        >
-          {props.rating}
-          <Popover content={createContentForRatingHover()}>
-            <InfoCircleTwoTone style={{ alignSelf: "center" }} />
-          </Popover>
-        </div>
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
+        <div style={{ marginRight: "8px" }}>{props.rating}</div>
+        <Popover content={createContentForRatingHover()}>
+          <InfoCircleTwoTone style={{ alignSelf: "center" }} />
+        </Popover>
       </div>
       <div
         style={{

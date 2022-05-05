@@ -53,7 +53,7 @@ function App() {
   }
 
   useEffect(() => {
-    setInterval(switchImages, 3000);
+    setInterval(switchImages, 2000);
   }, []);
 
   return (
@@ -130,27 +130,38 @@ function App() {
           <br />
           <NearbyResturants />
         </div>
-
         <div
           style={{
+            display: "flex",
+            flexDirection: "column",
             background: "aliceblue",
-            borderRight: "4px solid lightgrey",
-            borderLeft: "8px solid lightgrey",
             padding: "64px",
+            borderLeft: "8px solid lightgrey",
+            borderRight: "4px solid lightgrey",
           }}
         >
-          <h1 style={{ borderBottom: "1px solid lightgrey" }}>
-            Rate your latest burger experience
+          <h1
+            style={{
+              borderBottom: "1px solid lightgrey",
+              marginBottom: "64px",
+            }}
+          >
+            Share a picture of your favorite burger here
           </h1>
-          <br />
-          <Rating />
+          <div
+            style={{
+              alignSelf: "center",
+            }}
+          >
+            <ImageUploader />
+          </div>
         </div>
         <div
           style={{
             background: "aliceblue",
-            padding: "64px",
-            borderLeft: "4px solid lightgrey",
             borderRight: "8px solid lightgrey",
+            borderLeft: "4px solid lightgrey",
+            padding: "64px",
           }}
         >
           <h1
@@ -158,40 +169,8 @@ function App() {
               borderBottom: "1px solid lightgrey",
             }}
           >
-            Tips on how to rate your burger
+            Recent uploaded pictures
           </h1>
-          <br />
-          Burger Frontend 1.0 is created to help all the burger lovers around
-          the world
-          <br />
-          <br />
-          Here on Burger Frontend we help each other rate. We provide you with
-          the top rated burger resturants near you
-          <br />
-          <br />
-          Feel free to rate your latest burger experience or perhaps upload a
-          picture of your favorite burger!
-        </div>
-        <div
-          style={{
-            background: "aliceblue",
-            borderRight: "4px solid lightgrey",
-            borderLeft: "8px solid lightgrey",
-          }}
-        >
-          <div
-            style={{
-              padding: "64px",
-            }}
-          >
-            <h1
-              style={{
-                borderBottom: "1px solid lightgrey",
-              }}
-            >
-              Recent uploaded pictures
-            </h1>
-          </div>
           <div
             className="fade"
             style={{
@@ -270,36 +249,52 @@ function App() {
           <br />
           <br />
         </div>
+
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
             background: "aliceblue",
             padding: "64px",
-            borderLeft: "4px solid lightgrey",
-            borderRight: "8px solid lightgrey",
+            borderLeft: "8px solid lightgrey",
+            borderRight: "4px solid lightgrey",
           }}
         >
           <h1
             style={{
               borderBottom: "1px solid lightgrey",
-              marginBottom: "64px",
             }}
           >
-            Share a picture of your favorite burger here
+            Tips on how to rate your burger
           </h1>
-          <div
-            style={{
-              alignSelf: "center",
-            }}
-          >
-            <ImageUploader />
-          </div>
+          <br />
+          Burger Frontend 1.0 is created to help all the burger lovers around
+          the world
+          <br />
+          <br />
+          Here on Burger Frontend we help each other rate. We provide you with
+          the top rated burger resturants near you
+          <br />
+          <br />
+          Feel free to rate your latest burger experience or perhaps upload a
+          picture of your favorite burger!
+        </div>
+        <div
+          style={{
+            background: "aliceblue",
+            borderRight: "8px solid lightgrey",
+            borderLeft: "4px solid lightgrey",
+            padding: "64px",
+          }}
+        >
+          <h1 style={{ borderBottom: "1px solid lightgrey" }}>
+            Rate your latest burger experience
+          </h1>
+          <br />
+          <Rating />
         </div>
       </div>
       <div
         style={{
-          marginTop: "256px",
+          marginTop: "128px",
         }}
       />
     </div>
